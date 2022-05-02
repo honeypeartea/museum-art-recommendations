@@ -1,0 +1,28 @@
+[I 211221 08:28:27 server:155] Serving on http://127.0.0.1:35729
+/Users/xmh/Desktop/honeypeartea.github.io/staticfiles
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    main()
+  File "manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "/Users/xmh/opt/miniconda3/envs/tea/lib/python3.8/site-packages/django/core/management/__init__.py", line 425, in execute_from_command_line
+    utility.execute()
+  File "/Users/xmh/opt/miniconda3/envs/tea/lib/python3.8/site-packages/django/core/management/__init__.py", line 419, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Users/xmh/opt/miniconda3/envs/tea/lib/python3.8/site-packages/django/core/management/base.py", line 373, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/Users/xmh/opt/miniconda3/envs/tea/lib/python3.8/site-packages/django/core/management/base.py", line 417, in execute
+    output = self.handle(*args, **options)
+  File "/Users/xmh/opt/miniconda3/envs/tea/lib/python3.8/site-packages/livereload/management/commands/livereload.py", line 70, in handle
+    server.serve(
+  File "/Users/xmh/opt/miniconda3/envs/tea/lib/python3.8/site-packages/livereload/server.py", line 157, in serve
+    self.application(host, liveport=liveport)
+  File "/Users/xmh/opt/miniconda3/envs/tea/lib/python3.8/site-packages/livereload/server.py", line 145, in application
+    live.listen(liveport, address=host)
+  File "/Users/xmh/opt/miniconda3/envs/tea/lib/python3.8/site-packages/tornado/web.py", line 2109, in listen
+    server.listen(port, address)
+  File "/Users/xmh/opt/miniconda3/envs/tea/lib/python3.8/site-packages/tornado/tcpserver.py", line 151, in listen
+    sockets = bind_sockets(port, address=address)
+  File "/Users/xmh/opt/miniconda3/envs/tea/lib/python3.8/site-packages/tornado/netutil.py", line 161, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 48] Address already in use

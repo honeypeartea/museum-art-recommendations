@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="pageTitle">History Admission</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <form action = "" method = "post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value=Submit">
+    </form>
+    
+    {% if result.Asian %}
+     <p>Asian: {{result.Asian}}%</p>
+     <p>African American: {{result.African}}%</p>
+     <p>White: {{result.White}}%</p>
+     <p>Hispanic/Latino: {{result.Hispanic}}%</p>
+     <p>American Indian: {{result.Indian}}%</p>
+
+    {% else %}
+    <h2>Result: {{result}}</h2>
+
+    {% endif %}
+
+  </div>
+</section>
+
+{% endblock %}
