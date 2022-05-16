@@ -11,7 +11,7 @@ import hashlib
 import os, csv
 import pprint
 
-from honeypeartea.forms import SchoolPredict, AdmissionChance, HistoryAdmission
+from honeypeartea.forms import SchoolPredict, AdmissionChance, HistoryAdmission, cmaInput
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -33,6 +33,21 @@ def pricing(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def cma(request):
+    return render(request, 'cma.html')
+
+def nga(request):
+    return render(request, 'nga.html')
+
+def louvre(request):
+    return render(request, 'louvre.html')
+
+def rijksmuseum(request):
+    return render(request, 'rijksmuseum.html')
+def random(request):
+    return render(request, 'random.html')
+
 
 class school_predict(TemplateView):
     templatename = 'prediction.html'
@@ -222,6 +237,54 @@ class history_admission(TemplateView):
                         result = row[1]
             else:
                 result = 'Error input. Something went wrong.'
+        result = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+        args = {'form': form, 'result': result}
+        return render(request, self.templatename, args)
+
+
+class cma_form(TemplateView):
+    templatename = 'cma.html'
+
+    def csv2list(self, csvpath):
+        with open(csvpath, newline='') as f:
+            reader = csv.reader(f)
+            data = list(reader)
+            return data
+
+    def get(self, request):
+        form = cmaInput()
+        return render(request, self. templatename, {'form': form})
+
+    def post(self, request):
+        form = cmaInput(request.POST)
+        if form.is_valid():
+            art_name = form.cleaned_data['art_name']
+
+
+            # Check the result based on the searching category
+
+            dict = {
+                'a': {'name': 'Art name: mona lisa', 'year': 'Year: 27', 'text': "Description: famous art work",
+                      'link': "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"},
+                'b': {'name': 'Art name: mona lisa', 'year': 'Year: 27', 'text': "Description: famous art work",
+                      'link': "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"},
+                'c': {'name': 'Art name: mona lisa', 'year': 'Year: 27', 'text': "Description: famous art work",
+                      'link': "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"},
+                'd': {'name': 'Art name: mona lisa', 'year': 'Year: 27', 'text': "Description: famous art work",
+                      'link': "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"},
+                'e': {'name': 'Art name: mona lisa', 'year': 'Year: 27', 'text': "Description: famous art work",
+                      'link': "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"},
+                'f': {'name': 'Art name: mona lisa', 'year': 'Year: 27', 'text': "Description: famous art work",
+                      'link': "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"},
+                'g': {'name': 'Art name: mona lisa', 'year': 'Year: 27', 'text': "Description: famous art work",
+                      'link': "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"},
+                'h': {'name': 'Art name: mona lisa', 'year': 'Year: 27', 'text': "Description: famous art work",
+                      'link': "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"},
+                'i': {'name': 'Art name: mona lisa', 'year': 'Year: 27', 'text': "Description: famous art work",
+                      'link': "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"},
+            }
+            result = dict
+
 
         args = {'form': form, 'result': result}
         return render(request, self.templatename, args)

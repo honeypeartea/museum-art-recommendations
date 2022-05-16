@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="/cvs/gpa.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/cvs/rank.csv">
           <value>
             <Attribute>
@@ -10,7 +17,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/cvs/sat.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/static/gpa.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/static/race.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

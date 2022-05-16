@@ -57,3 +57,8 @@ class HistoryAdmission(forms.Form):
     college = forms.CharField(label='College', widget=forms.Select(choices=COLLEGES))
     year = forms.CharField(label='Year', widget=forms.Select(choices=YEARS))
     category = forms.CharField(label='Category', widget=forms.Select(choices=ATTRIBUTES))
+
+
+class cmaInput(forms.Form):
+    #gpa = forms.CharField(label='Art Name', widget=forms.Select(choices=COLLEGES))
+    art_name = forms.CharField()

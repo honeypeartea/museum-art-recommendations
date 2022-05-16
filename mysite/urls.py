@@ -32,4 +32,10 @@ urlpatterns = [
     path('chance.html', views.admission_chance.as_view(), name='chance'),
     path('history.html', views.history_admission.as_view(), name='history'),
 
+    path('cma.html', views.cma_form.as_view(), name='cma'),
+    path('nga.html', views.nga, name='nga'),
+    path('louvre.html', views.louvre, name='louvre'),
+    path('rijksmuseum.html', views.rijksmuseum, name='rijksmuseum'),
+    path('random.html', views.random, name='random'),
+
 ]
