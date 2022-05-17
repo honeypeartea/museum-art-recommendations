@@ -2,13 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9c9726f-acca-41c4-99fc-2535bfb41165" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mysite/crwaler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/out.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvs/education.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvs/gpa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvs/rank.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvs/sat.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvs/unemployment.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvs/wage.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/honeypeartea/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/chance.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/honeypeartea/templates/cma.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/cma.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/courses.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/history.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/louvre.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/louvre.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/nga.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/nga.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/old_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/prediction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/pricing.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/random.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/random.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/requirement.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/rijksmuseum.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/rijksmuseum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/honeypeartea/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/crwaler.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_files/crwaler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cvs/out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_files/gpa_clean.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_files/kmean.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_files/uc_all_clean.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_files/wage_clean.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/gpa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/bg_direction_nav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/glyphicons-halflings-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/glyphicons-halflings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/low-poly01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/nivo-bullets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/section-image-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/slides/uc0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/slides/uc1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/slides/uc2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/uc_logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/race.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/resource/rijks_with_rec.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/sat.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +83,12 @@
     "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/python_files" />
+      <recent name="$PROJECT_DIR$/cvs" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="crwaler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="museum-art-recommendations" />
@@ -56,7 +102,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mysite/crwaler.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_files/crwaler.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />

@@ -59,14 +59,335 @@
             <a class="dropdown-item" href="index.html#International">International</a>
           </div>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" href="#subscribe">CONTACTS</a>
         </li>
-
       </ul>
     </div>
   </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="pageTitle">
+          <center>
+            <b><br>Rijksmuseum<br><br></b>
+          </center>
+        </h1>
+        <h2>
+          <i>Art Recommendation: You could type the name of atrwork to get the top 10 most similar artworks. Or, you could choose
+          the Artist you like and enjoy its top 10 most representative artwork.<br><br></i>
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <form action = "" method = "post">
+      <center>
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </center>
+    </form>
+  </div>
+
+  {% if result.a %}
+  <div class="container">
+    <div class="card-columns">
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal1">
+        <img class="card-img-top wow fadeInUp" src={{ result.a.link }} alt="Card image cap">
+      </div>
+
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal2">
+        <img class="card-img-top wow fadeInUp" src={{ result.b.link }} alt="Card image cap">
+      </div>
+
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal3">
+        <img class="card-img-top wow fadeInUp" src={{ result.c.link }} alt="Card image cap">
+      </div>
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal4">
+        <img class="card-img-top wow fadeInUp" src={{ result.d.link }} alt="Card image cap">
+      </div>
+
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal5">
+        <img class="card-img-top wow fadeInUp" src={{ result.e.link }} alt="Card image cap">
+      </div>
+
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal6">
+        <img class="card-img-top wow fadeInUp" src={{ result.f.link }} alt="Card image cap">
+      </div>
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal7">
+        <img class="card-img-top wow fadeInUp" src={{ result.g.link }} alt="Card image cap">
+      </div>
+
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal8">
+        <img class="card-img-top wow fadeInUp" src={{ result.h.link }} alt="Card image cap">
+      </div>
+
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal9">
+        <img class="card-img-top wow fadeInUp" src={{ result.i.link }} alt="Card image cap">
+      </div>
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal10">
+        <img class="card-img-top wow fadeInUp" src={{ result.j.link }} alt="Card image cap">
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="container">
+    <div class="card-columns">
+      <h3>{{ result }}</h3>
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal1">
+        <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
+      </div>
+
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal2">
+        <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
+      </div>
+
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal3">
+        <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
+      </div>
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal4">
+        <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
+      </div>
+
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal5">
+        <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
+      </div>
+
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal6">
+        <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
+      </div>
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal7">
+        <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
+      </div>
+
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal8">
+        <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
+      </div>
+
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal9">
+        <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
+      </div>
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal10">
+        <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+
+
+
+  <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal1label">Art Recommendation Number 1</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-text">{{ result.a.name }}</p>
+          <p class="card-text">{{ result.a.year }}</p>
+          <p>{{ result.a.text }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal1label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal1label">Art Recommendation Number 2</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-text">{{ result.b.name }}</p>
+          <p class="card-text">{{ result.b.year }}</p>
+          <p>{{ result.b.text }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal1label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal1label">Art Recommendation Number 3</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-text">{{ result.c.name }}</p>
+          <p class="card-text">{{ result.c.year }}</p>
+          <p>{{ result.c.text }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="modal1label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal1label">Art Recommendation Number 4</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-text">{{ result.d.name }}</p>
+          <p class="card-text">{{ result.d.year }}</p>
+          <p>{{ result.d.text }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-labelledby="modal1label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal1label">Art Recommendation Number 5</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-text">{{ result.e.name }}</p>
+          <p class="card-text">{{ result.e.year }}</p>
+          <p>{{ result.e.text }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="modal1label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal1label">Art Recommendation Number 6</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-text">{{ result.f.name }}</p>
+          <p class="card-text">{{ result.f.year }}</p>
+          <p>{{ result.f.text }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal7" tabindex="-1" role="dialog" aria-labelledby="modal1label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal1label">Art Recommendation Number 7</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-text">{{ result.g.name }}</p>
+          <p class="card-text">{{ result.g.year }}</p>
+          <p>{{ result.g.text }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal8" tabindex="-1" role="dialog" aria-labelledby="modal1label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal1label">Art Recommendation Number 8</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-text">{{ result.h.name }}</p>
+          <p class="card-text">{{ result.h.year }}</p>
+          <p>{{ result.h.text }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="modal9" tabindex="-1" role="dialog" aria-labelledby="modal1label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal1label">Art Recommendation Number 9</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-text">{{ result.i.name }}</p>
+          <p class="card-text">{{ result.i.year }}</p>
+          <p>{{ result.i.text }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal10" tabindex="-1" role="dialog" aria-labelledby="modal1label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal1label">Art Recommendation Number 10</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-text">{{ result.j.name }}</p>
+          <p class="card-text">{{ result.j.year }}</p>
+          <p>{{ result.j.text }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <div class="page-foot wow lightSpeedIn" id="subscribe">

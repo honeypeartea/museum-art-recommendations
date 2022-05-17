@@ -8,32 +8,17 @@ from django.views.generic.edit import FormView
 from django.views.static import serve
 from django.urls import reverse
 import hashlib
-import os, csv
+import os, csv, numpy
 import pprint
 
 
-from honeypeartea.forms import SchoolPredict, AdmissionChance, HistoryAdmission, cmaInput
+from honeypeartea.forms import cmaInput, ngaInput, louvreInput,rijksInput, randomInput
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
-
-def about(request):
-    return render(request, 'about.html')
-
-def courses(request):
-    return render(request, 'courses.html')
-
-def requirement(request):
-    return render(request, 'requirement.html')
-
-def pricing(request):
-    return render(request, 'pricing.html')
-
-def contact(request):
-    return render(request, 'contact.html')
 
 def cma(request):
     return render(request, 'cma.html')
@@ -46,201 +31,11 @@ def louvre(request):
 
 def rijksmuseum(request):
     return render(request, 'rijksmuseum.html')
+
 def random(request):
     return render(request, 'random.html')
 
 
-class school_predict(TemplateView):
-    templatename = 'prediction.html'
-
-    def get(self, request):
-        form = SchoolPredict()
-        return render(request, self.templatename, {'form': form})
-
-    def post(self, request):
-        form = SchoolPredict(request.POST)
-        if form.is_valid():
-            schoolrank = form.cleaned_data['schoolrank']
-            gpa = form.cleaned_data['gpa']
-            race = form.cleaned_data['race']
-            sat = form.cleaned_data['sat']
-            ap = form.cleaned_data['ap']
-
-            # Main decision conditions
-            if gpa >= 3.7 and schoolrank == 'top_30':
-                print(f' === You will get in UCLA!!!! ===')
-                result = 'UC Berkeley'
-            elif gpa >= 3.5 and schoolrank == 'top_30':
-                result = 'UCLA'
-            elif gpa >= 3.0 and schoolrank == 'top_30':
-                result = 'UC San Diego'
-            elif gpa >= 3.0 and schoolrank == 'top_50':
-                result = 'UC Santa Barbara'
-            elif gpa >= 3.0 and schoolrank == 'top_70':
-                result = 'UC Irvine'
-            elif gpa >= 3.0 and schoolrank == 'top_100':
-                result = 'UC Davis'
-            elif gpa >= 2.5 and schoolrank == 'top_70':
-                result = 'UC Santa Cruz'
-            elif gpa >= 2.5 and schoolrank == 'top_100':
-                result = 'UC Riverside'
-            else:
-                result = 'UC Merced'
-
-        args = {'form': form, 'result': result}
-        return render(request, self.templatename, args)
-
-class admission_chance(TemplateView):
-    templatename = 'chance.html'
-
-    def get(self, request):
-        form = AdmissionChance()
-        return render(request, self.templatename, {'form': form})
-
-    def post(self, request):
-        form = AdmissionChance(request.POST)
-        if form.is_valid():
-            schoolrank = form.cleaned_data['schoolrank']
-            gpa = form.cleaned_data['gpa']
-            race = form.cleaned_data['race']
-            sat = form.cleaned_data['sat']
-            ap = form.cleaned_data['ap']
-            college = form.cleaned_data['college']
-
-            high = "You have a high chance of being admitted to UC "
-            mid =  "You have a medium chance of being admitted to UC "
-            low =  "You have a low chance of being admitted to UC"
-            # Main decision conditions
-
-            if college == 'Los Angeles':
-                if gpa >= 3.5 and schoolrank == 'top_30':
-                    result = high + college
-                elif gpa >= 3.5 and schoolrank == 'top_50':
-                    result = mid + college
-                else:
-                    result = low + college
-            elif college == 'Berkeley':
-                if gpa >= 3.7 and schoolrank == 'top_30':
-                    result = high + college
-                elif gpa >= 3.5 and schoolrank == 'top_50':
-                    result = mid + college
-                else:
-                    result = low + college
-            elif college == 'San Diego':
-                if gpa >= 3.3 and schoolrank == 'top_30':
-                    result = high + college
-                elif gpa >= 3.0 and schoolrank == 'top_50':
-                    result = mid + college
-                else:
-                    result = low + college
-            elif college == 'Santa Barbara':
-                if gpa >= 3.0 and schoolrank == 'top_30':
-                    result = high + college
-                elif gpa >= 2.7 and schoolrank == 'top_50':
-                    result = mid + college
-                else:
-                    result = low + college
-            elif college == 'Irvine':
-                if gpa >= 3.5 and schoolrank == 'top_50':
-                    result = high + college
-                elif gpa >= 3.0 and schoolrank == 'top_70':
-                    result = mid + college
-                else:
-                    result = low + college
-            elif college == 'Davis':
-                if gpa >= 3.0 and schoolrank == 'top_50':
-                    result = high + college
-                elif gpa >= 3.0 and schoolrank == 'top_70':
-                    result = mid + college
-                else:
-                    result = low + college
-            elif college == 'Santa Cruz':
-                if gpa >= 3.0 and schoolrank == 'top_50':
-                    result = high + college
-                elif gpa >= 2.7 and schoolrank == 'top_70':
-                    result = mid + college
-                else:
-                    result = low + college
-            elif college == 'Riverside':
-                if gpa >= 3.0 and schoolrank == 'top_50':
-                    result = high + college
-                elif gpa >= 2.5 and schoolrank == 'top_70':
-                    result = mid + college
-                else:
-                    result = low + college
-            elif college == 'Merced':
-                if gpa >= 3.0 and schoolrank == 'top_70':
-                    result = high + college
-                elif gpa >= 2.5 and schoolrank == 'top_100':
-                    result = mid + college
-                else:
-                    result = low + college
-            else:
-                print('=== you are fucked ===')
-                result = "Please input again"
-
-        args = {'form': form, 'result': result}
-        return render(request, self.templatename, args)
-
-class history_admission(TemplateView):
-    templatename = 'history.html'
-
-    def csv2list(self, csvpath):
-        with open(csvpath, newline='') as f:
-            reader = csv.reader(f)
-            data = list(reader)
-            return data
-
-    def get(self, request):
-        form = HistoryAdmission()
-        return render(request, self. templatename, {'form': form})
-
-    def post(self, request):
-        form = HistoryAdmission(request.POST)
-        if form.is_valid():
-            college = form.cleaned_data['college']
-            year = form.cleaned_data['year']
-            category = form.cleaned_data['category']
-
-            # Check the result based on the searching category
-            if category == 'race':
-                data = self.csv2list(os.path.join(PROJECT_ROOT, 'static/race.csv'))
-                dict = {
-                    'Asian': 0,
-                    'White': 0,
-                    'Hispanic': 0,
-                    'African': 0,
-                    'Indian': 0
-                }
-                for row in data:
-                    for race in dict.keys():
-                        if row[2] == college and race in row[3]  and row[7] == str(year):
-                            dict[race] += float(row[6])
-                # Round up to 100
-                value_sum = sum(dict.values())
-                dict['Asian'] += (100-value_sum)/2
-                dict['White'] += (100-value_sum)/2
-                pprint.pprint(dict)
-                result = dict
-
-            elif category == 'gpa':
-                data = self.csv2list(os.path.join(PROJECT_ROOT, 'static/gpa.csv'))
-                for row in data:
-                    if row[0] == str(year) and row[1] == college:
-                        print(f' - Found it! GPA: {row[2]}')
-                        result = row[2]
-
-            elif category == 'sat':
-                data = self.csv2list(os.path.join(PROJECT_ROOT, 'static/sat.csv'))
-                for row in data:
-                    if row[0] == college:
-                        print(f' - Found it! SAT: {row[1]}')
-                        result = row[1]
-            else:
-                result = 'Error input. Something went wrong.'
-        result = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
-        args = {'form': form, 'result': result}
-        return render(request, self.templatename, args)
 
 
 class cma_form(TemplateView):
@@ -250,7 +45,6 @@ class cma_form(TemplateView):
         with open(csvpath, newline='') as f:
             reader = csv.reader(f)
             header = next(reader)
-            print(header)
             data = list(reader)
             return data
 
@@ -262,105 +56,430 @@ class cma_form(TemplateView):
         form = cmaInput(request.POST)
         if form.is_valid():
             dict = {}
+            raw_data = []
             art_name = form.cleaned_data['art_name']
             artists = form.cleaned_data['artists']
             all = self.csv2list(os.path.join(PROJECT_ROOT, 'static/resource/cleveland_with_rec.csv'))
             if artists != 'none':
-                raw_data = []
                 data = self.csv2list(os.path.join(PROJECT_ROOT, 'static/artist/cleveland_artists.csv'))
                 for row in data:
                     if row[0] == artists:
                         raw_data = row
                         break
-                if raw_data != []:
-                    dict = {
-                        'a': {'name': 'Art name: ' + all[int(raw_data[1])][1], 'year': 'Year: ' + all[int(raw_data[1])][2],
-                              'text': "Description: " + (all[int(raw_data[1])][8] if all[int(raw_data[1])][8] != "" else all[int(raw_data[1])][5]), 'link': all[int(raw_data[1])][6]},
-                        'b': {'name': 'Art name: ' + all[int(raw_data[2])][1], 'year': 'Year: ' + all[int(raw_data[2])][2],
-                              'text': "Description: " + (all[int(raw_data[2])][8] if all[int(raw_data[2])][8] != "" else all[int(raw_data[2])][5]), 'link': all[int(raw_data[2])][6]},
-                        'c': {'name': 'Art name: ' + all[int(raw_data[3])][1], 'year': 'Year: ' + all[int(raw_data[3])][2],
-                              'text': "Description: " + (all[int(raw_data[3])][8] if all[int(raw_data[3])][8] != "" else all[int(raw_data[3])][5]), 'link': all[int(raw_data[3])][6]},
-                        'd': {'name': 'Art name: ' + all[int(raw_data[4])][1], 'year': 'Year: ' + all[int(raw_data[4])][2],
-                              'text': "Description: " + (all[int(raw_data[4])][8] if all[int(raw_data[4])][8] != "" else all[int(raw_data[4])][5]), 'link': all[int(raw_data[4])][6]},
-                        'e': {'name': 'Art name: ' + all[int(raw_data[5])][1], 'year': 'Year: ' + all[int(raw_data[5])][2],
-                              'text': "Description: " + (all[int(raw_data[5])][8] if all[int(raw_data[5])][8] != "" else all[int(raw_data[5])][5]), 'link': all[int(raw_data[5])][6]},
-                        'f': {'name': 'Art name: ' + all[int(raw_data[6])][1], 'year': 'Year: ' + all[int(raw_data[6])][2],
-                              'text': "Description: " + (all[int(raw_data[6])][8] if all[int(raw_data[6])][8] != "" else all[int(raw_data[6])][5]), 'link': all[int(raw_data[6])][6]},
-                        'g': {'name': 'Art name: ' + all[int(raw_data[7])][1], 'year': 'Year: ' + all[int(raw_data[7])][2],
-                              'text': "Description: " + (all[int(raw_data[7])][8] if all[int(raw_data[7])][8] != "" else all[int(raw_data[7])][5]), 'link': all[int(raw_data[7])][6]},
-                        'h': {'name': 'Art name: ' + all[int(raw_data[8])][1], 'year': 'Year: ' + all[int(raw_data[8])][2],
-                              'text': "Description: " + (all[int(raw_data[8])][8] if all[int(raw_data[8])][8] != "" else all[int(raw_data[8])][5]), 'link': all[int(raw_data[8])][6]},
-                        'i': {'name': 'Art name: ' + all[int(raw_data[9])][1], 'year': 'Year: ' + all[int(raw_data[9])][2],
-                              'text': "Description: " + (all[int(raw_data[9])][8] if all[int(raw_data[9])][8] != "" else all[int(raw_data[9])][5]), 'link': all[int(raw_data[9])][6]},
-                        'j': {'name': 'Art name: ' + all[int(raw_data[10])][1], 'year': 'Year: ' + all[int(raw_data[10])][2],
-                              'text': "Description: " + (all[int(raw_data[10])][8] if all[int(raw_data[10])][8] != "" else all[int(raw_data[10])][5]), 'link': all[int(raw_data[10])][6]},
-                    }
-
-
-
-
-
-
             elif art_name != "":
-
                 raw_data = []
                 for row in all:
                     if row[1] == art_name:
                         raw_data = row[9:]
                         break
-                if raw_data != []:
-                    dict = {
-                        'a': {'name': 'Art name: ' + all[int(raw_data[1])][1], 'year': 'Year: ' + all[int(raw_data[1])][2],
-                              'text': "Description: " + (
-                                  all[int(raw_data[1])][8] if all[int(raw_data[1])][8] != "" else all[int(raw_data[1])][5]),
-                              'link': all[int(raw_data[1])][6]},
-                        'b': {'name': 'Art name: ' + all[int(raw_data[2])][1], 'year': 'Year: ' + all[int(raw_data[2])][2],
-                              'text': "Description: " + (
-                                  all[int(raw_data[2])][8] if all[int(raw_data[2])][8] != "" else all[int(raw_data[2])][5]),
-                              'link': all[int(raw_data[2])][6]},
-                        'c': {'name': 'Art name: ' + all[int(raw_data[3])][1], 'year': 'Year: ' + all[int(raw_data[3])][2],
-                              'text': "Description: " + (
-                                  all[int(raw_data[3])][8] if all[int(raw_data[3])][8] != "" else all[int(raw_data[3])][5]),
-                              'link': all[int(raw_data[3])][6]},
-                        'd': {'name': 'Art name: ' + all[int(raw_data[4])][1], 'year': 'Year: ' + all[int(raw_data[4])][2],
-                              'text': "Description: " + (
-                                  all[int(raw_data[4])][8] if all[int(raw_data[4])][8] != "" else all[int(raw_data[4])][5]),
-                              'link': all[int(raw_data[4])][6]},
-                        'e': {'name': 'Art name: ' + all[int(raw_data[5])][1], 'year': 'Year: ' + all[int(raw_data[5])][2],
-                              'text': "Description: " + (
-                                  all[int(raw_data[5])][8] if all[int(raw_data[5])][8] != "" else all[int(raw_data[5])][5]),
-                              'link': all[int(raw_data[5])][6]},
-                        'f': {'name': 'Art name: ' + all[int(raw_data[6])][1], 'year': 'Year: ' + all[int(raw_data[6])][2],
-                              'text': "Description: " + (
-                                  all[int(raw_data[6])][8] if all[int(raw_data[6])][8] != "" else all[int(raw_data[6])][5]),
-                              'link': all[int(raw_data[6])][6]},
-                        'g': {'name': 'Art name: ' + all[int(raw_data[7])][1], 'year': 'Year: ' + all[int(raw_data[7])][2],
-                              'text': "Description: " + (
-                                  all[int(raw_data[7])][8] if all[int(raw_data[7])][8] != "" else all[int(raw_data[7])][5]),
-                              'link': all[int(raw_data[7])][6]},
-                        'h': {'name': 'Art name: ' + all[int(raw_data[8])][1], 'year': 'Year: ' + all[int(raw_data[8])][2],
-                              'text': "Description: " + (
-                                  all[int(raw_data[8])][8] if all[int(raw_data[8])][8] != "" else all[int(raw_data[8])][5]),
-                              'link': all[int(raw_data[8])][6]},
-                        'i': {'name': 'Art name: ' + all[int(raw_data[9])][1], 'year': 'Year: ' + all[int(raw_data[9])][2],
-                              'text': "Description: " + (
-                                  all[int(raw_data[9])][8] if all[int(raw_data[9])][8] != "" else all[int(raw_data[9])][5]),
-                              'link': all[int(raw_data[9])][6]},
-                        'j': {'name': 'Art name: ' + all[int(raw_data[10])][1],
-                              'year': 'Year: ' + all[int(raw_data[10])][2],
-                              'text': "Description: " + (
-                                  all[int(raw_data[10])][8] if all[int(raw_data[10])][8] != "" else all[int(raw_data[10])][
-                                      5]), 'link': all[int(raw_data[10])][6]},
-                    }
 
-
-            # Check the result based on the searching category
+            if raw_data != []:
+                dict = {
+                    'a': {'name': 'Art name: ' + all[int(raw_data[1])][1], 'year': 'Year: ' + all[int(raw_data[1])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[1])][8] if all[int(raw_data[1])][8] != "" else all[int(raw_data[1])][5]),
+                          'link': all[int(raw_data[1])][6]},
+                    'b': {'name': 'Art name: ' + all[int(raw_data[2])][1], 'year': 'Year: ' + all[int(raw_data[2])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[2])][8] if all[int(raw_data[2])][8] != "" else all[int(raw_data[2])][5]),
+                          'link': all[int(raw_data[2])][6]},
+                    'c': {'name': 'Art name: ' + all[int(raw_data[3])][1], 'year': 'Year: ' + all[int(raw_data[3])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[3])][8] if all[int(raw_data[3])][8] != "" else all[int(raw_data[3])][5]),
+                          'link': all[int(raw_data[3])][6]},
+                    'd': {'name': 'Art name: ' + all[int(raw_data[4])][1], 'year': 'Year: ' + all[int(raw_data[4])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[4])][8] if all[int(raw_data[4])][8] != "" else all[int(raw_data[4])][5]),
+                          'link': all[int(raw_data[4])][6]},
+                    'e': {'name': 'Art name: ' + all[int(raw_data[5])][1], 'year': 'Year: ' + all[int(raw_data[5])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[5])][8] if all[int(raw_data[5])][8] != "" else all[int(raw_data[5])][5]),
+                          'link': all[int(raw_data[5])][6]},
+                    'f': {'name': 'Art name: ' + all[int(raw_data[6])][1], 'year': 'Year: ' + all[int(raw_data[6])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[6])][8] if all[int(raw_data[6])][8] != "" else all[int(raw_data[6])][5]),
+                          'link': all[int(raw_data[6])][6]},
+                    'g': {'name': 'Art name: ' + all[int(raw_data[7])][1], 'year': 'Year: ' + all[int(raw_data[7])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[7])][8] if all[int(raw_data[7])][8] != "" else all[int(raw_data[7])][5]),
+                          'link': all[int(raw_data[7])][6]},
+                    'h': {'name': 'Art name: ' + all[int(raw_data[8])][1], 'year': 'Year: ' + all[int(raw_data[8])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[8])][8] if all[int(raw_data[8])][8] != "" else all[int(raw_data[8])][5]),
+                          'link': all[int(raw_data[8])][6]},
+                    'i': {'name': 'Art name: ' + all[int(raw_data[9])][1], 'year': 'Year: ' + all[int(raw_data[9])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[9])][8] if all[int(raw_data[9])][8] != "" else all[int(raw_data[9])][5]),
+                          'link': all[int(raw_data[9])][6]},
+                    'j': {'name': 'Art name: ' + all[int(raw_data[10])][1],
+                          'year': 'Year: ' + all[int(raw_data[10])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[10])][8] if all[int(raw_data[10])][8] != "" else all[int(raw_data[10])][
+                                  5]), 'link': all[int(raw_data[10])][6]},
+                }
 
             if dict =={}:
-                result = "Please enter artwork name or select artist"
+                result = "Please enter valid artwork name or select artist"
             else:
                 result = dict
 
+        args = {'form': form, 'result': result}
+        return render(request, self.templatename, args)
+
+
+class nga_form(TemplateView):
+    templatename = 'nga.html'
+
+    def csv2list(self, csvpath):
+        with open(csvpath, newline='') as f:
+            reader = csv.reader(f)
+            header = next(reader)
+            data = list(reader)
+            return data
+
+    def get(self, request):
+        form = ngaInput()
+        return render(request, self. templatename, {'form': form})
+
+    def post(self, request):
+        form = ngaInput(request.POST)
+        if form.is_valid():
+            dict = {}
+            raw_data = []
+            art_name = form.cleaned_data['art_name']
+            artists = form.cleaned_data['artists']
+            all = self.csv2list(os.path.join(PROJECT_ROOT, 'static/resource/nga_with_rec.csv'))
+            if artists != 'none':
+                data = self.csv2list(os.path.join(PROJECT_ROOT, 'static/artist/nga_artists.csv'))
+                for row in data:
+                    if row[0] == artists:
+                        raw_data = row
+                        break
+            elif art_name != "":
+                raw_data = []
+                for row in all:
+                    if row[1] == art_name:
+                        raw_data = row[10:]
+                        break
+
+            if raw_data != []:
+                dict = {
+                    'a': {'name': 'Art name: ' + all[int(raw_data[1])][1], 'year': 'Year: ' + all[int(raw_data[1])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[1])][10] if all[int(raw_data[1])][10] != "" else all[int(raw_data[1])][8]),
+                          'link': all[int(raw_data[1])][6]},
+                    'b': {'name': 'Art name: ' + all[int(raw_data[2])][1], 'year': 'Year: ' + all[int(raw_data[2])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[2])][10] if all[int(raw_data[2])][10] != "" else all[int(raw_data[2])][8]),
+                          'link': all[int(raw_data[2])][6]},
+                    'c': {'name': 'Art name: ' + all[int(raw_data[3])][1], 'year': 'Year: ' + all[int(raw_data[3])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[3])][10] if all[int(raw_data[3])][10] != "" else all[int(raw_data[3])][8]),
+                          'link': all[int(raw_data[3])][9]},
+                    'd': {'name': 'Art name: ' + all[int(raw_data[4])][1], 'year': 'Year: ' + all[int(raw_data[4])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[4])][10] if all[int(raw_data[4])][10] != "" else all[int(raw_data[4])][8]),
+                          'link': all[int(raw_data[4])][9]},
+                    'e': {'name': 'Art name: ' + all[int(raw_data[5])][1], 'year': 'Year: ' + all[int(raw_data[5])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[5])][10] if all[int(raw_data[5])][10] != "" else all[int(raw_data[5])][8]),
+                          'link': all[int(raw_data[5])][9]},
+                    'f': {'name': 'Art name: ' + all[int(raw_data[6])][1], 'year': 'Year: ' + all[int(raw_data[6])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[6])][10] if all[int(raw_data[6])][10] != "" else all[int(raw_data[6])][8]),
+                          'link': all[int(raw_data[6])][9]},
+                    'g': {'name': 'Art name: ' + all[int(raw_data[7])][1], 'year': 'Year: ' + all[int(raw_data[7])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[7])][10] if all[int(raw_data[7])][10] != "" else all[int(raw_data[7])][8]),
+                          'link': all[int(raw_data[7])][9]},
+                    'h': {'name': 'Art name: ' + all[int(raw_data[8])][1], 'year': 'Year: ' + all[int(raw_data[8])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[8])][10] if all[int(raw_data[8])][10] != "" else all[int(raw_data[8])][8]),
+                          'link': all[int(raw_data[8])][9]},
+                    'i': {'name': 'Art name: ' + all[int(raw_data[9])][1], 'year': 'Year: ' + all[int(raw_data[9])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[9])][10] if all[int(raw_data[9])][10] != "" else all[int(raw_data[9])][8]),
+                          'link': all[int(raw_data[9])][9]},
+                    'j': {'name': 'Art name: ' + all[int(raw_data[10])][1],
+                          'year': 'Year: ' + all[int(raw_data[10])][2],
+                          'text': "Description: " + (
+                              all[int(raw_data[10])][10] if all[int(raw_data[10])][10] != "" else all[int(raw_data[10])][
+                                  8]), 'link': all[int(raw_data[10])][9]},
+                }
+
+            if dict =={}:
+                result = "Please enter valid artwork name or select artist"
+            else:
+                result = dict
+
+        args = {'form': form, 'result': result}
+        return render(request, self.templatename, args)
+
+
+class louvre_form(TemplateView):
+    templatename = 'louvre.html'
+
+    def csv2list(self, csvpath):
+        with open(csvpath, newline='') as f:
+            reader = csv.reader(f)
+            header = next(reader)
+            data = list(reader)
+            return data
+
+    def get(self, request):
+        form = louvreInput()
+        return render(request, self. templatename, {'form': form})
+
+    def post(self, request):
+        form = louvreInput(request.POST)
+        if form.is_valid():
+            dict = {}
+            raw_data = []
+            art_name = form.cleaned_data['art_name']
+            artists = form.cleaned_data['artists']
+            all = self.csv2list(os.path.join(PROJECT_ROOT, 'static/resource/louvre_with_rec.csv'))
+            if artists != 'none':
+                data = self.csv2list(os.path.join(PROJECT_ROOT, 'static/artist/louvre_artists.csv'))
+                for row in data:
+                    if row[0] == artists:
+                        raw_data = row
+                        break
+            elif art_name != "":
+                raw_data = []
+                for row in all:
+                    if row[1] == art_name:
+                        raw_data = row[11:]
+                        break
+
+            if raw_data != []:
+                dict = {
+                    'a': {'name': 'Art name: ' + all[int(raw_data[1])][1], 'year': 'Year: ' + all[int(raw_data[1])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[1])][11] if all[int(raw_data[1])][11] != "" else all[int(raw_data[1])][6]),
+                          'link': all[int(raw_data[1])][5]},
+                    'b': {'name': 'Art name: ' + all[int(raw_data[2])][1], 'year': 'Year: ' + all[int(raw_data[2])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[2])][11] if all[int(raw_data[2])][11] != "" else all[int(raw_data[2])][6]),
+                          'link': all[int(raw_data[2])][5]},
+                    'c': {'name': 'Art name: ' + all[int(raw_data[3])][1], 'year': 'Year: ' + all[int(raw_data[3])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[3])][11] if all[int(raw_data[3])][11] != "" else all[int(raw_data[3])][6]),
+                          'link': all[int(raw_data[3])][5]},
+                    'd': {'name': 'Art name: ' + all[int(raw_data[4])][1], 'year': 'Year: ' + all[int(raw_data[4])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[4])][11] if all[int(raw_data[4])][11] != "" else all[int(raw_data[4])][6]),
+                          'link': all[int(raw_data[4])][5]},
+                    'e': {'name': 'Art name: ' + all[int(raw_data[5])][1], 'year': 'Year: ' + all[int(raw_data[5])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[5])][11] if all[int(raw_data[5])][11] != "" else all[int(raw_data[5])][6]),
+                          'link': all[int(raw_data[5])][5]},
+                    'f': {'name': 'Art name: ' + all[int(raw_data[6])][1], 'year': 'Year: ' + all[int(raw_data[6])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[6])][11] if all[int(raw_data[6])][11] != "" else all[int(raw_data[6])][6]),
+                          'link': all[int(raw_data[6])][5]},
+                    'g': {'name': 'Art name: ' + all[int(raw_data[7])][1], 'year': 'Year: ' + all[int(raw_data[7])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[7])][11] if all[int(raw_data[7])][11] != "" else all[int(raw_data[7])][6]),
+                          'link': all[int(raw_data[7])][5]},
+                    'h': {'name': 'Art name: ' + all[int(raw_data[8])][1], 'year': 'Year: ' + all[int(raw_data[8])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[8])][11] if all[int(raw_data[8])][11] != "" else all[int(raw_data[8])][6]),
+                          'link': all[int(raw_data[8])][5]},
+                    'i': {'name': 'Art name: ' + all[int(raw_data[9])][1], 'year': 'Year: ' + all[int(raw_data[9])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[9])][11] if all[int(raw_data[9])][11] != "" else all[int(raw_data[9])][6]),
+                          'link': all[int(raw_data[9])][5]},
+                    'j': {'name': 'Art name: ' + all[int(raw_data[10])][1],
+                          'year': 'Year: ' + all[int(raw_data[10])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[10])][11] if all[int(raw_data[10])][11] != "" else all[int(raw_data[10])][
+                                  6]), 'link': all[int(raw_data[10])][5]},
+                }
+
+            if dict =={}:
+                result = "Please enter valid artwork name or select artist"
+            else:
+                result = dict
+
+        args = {'form': form, 'result': result}
+        return render(request, self.templatename, args)
+
+
+class rijks_form(TemplateView):
+    templatename = 'rijksmuseum.html'
+
+    def csv2list(self, csvpath):
+        with open(csvpath, newline='') as f:
+            reader = csv.reader(f)
+            header = next(reader)
+            data = list(reader)
+            return data
+
+    def get(self, request):
+        form = rijksInput()
+        return render(request, self. templatename, {'form': form})
+
+    def post(self, request):
+        form = rijksInput(request.POST)
+        if form.is_valid():
+            dict = {}
+            raw_data = []
+            art_name = form.cleaned_data['art_name']
+            artists = form.cleaned_data['artists']
+            all = self.csv2list(os.path.join(PROJECT_ROOT, 'static/resource/rijks_with_rec.csv'))
+            if artists != 'none':
+                data = self.csv2list(os.path.join(PROJECT_ROOT, 'static/artist/rijks_artists.csv'))
+                for row in data:
+                    if row[0] == artists:
+                        raw_data = row
+                        break
+            elif art_name != "":
+                raw_data = []
+                for row in all:
+                    if row[1] == art_name:
+                        raw_data = row[10:21]
+                        break
+
+            if raw_data != []:
+                print("here1", raw_data)
+
+                dict = {
+                    'a': {'name': 'Art name: ' + all[int(raw_data[1])][1], 'year': 'Year: ' + all[int(raw_data[1])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[1])][9] if all[int(raw_data[1])][9] != "" else all[int(raw_data[1])][5]),
+                          'link': all[int(raw_data[1])][-1]},
+                    'b': {'name': 'Art name: ' + all[int(raw_data[2])][1], 'year': 'Year: ' + all[int(raw_data[2])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[2])][9] if all[int(raw_data[2])][9] != "" else all[int(raw_data[2])][5]),
+                          'link': all[int(raw_data[2])][-1]},
+                    'c': {'name': 'Art name: ' + all[int(raw_data[3])][1], 'year': 'Year: ' + all[int(raw_data[3])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[3])][9] if all[int(raw_data[3])][9] != "" else all[int(raw_data[3])][5]),
+                          'link': all[int(raw_data[3])][-1]},
+                    'd': {'name': 'Art name: ' + all[int(raw_data[4])][1], 'year': 'Year: ' + all[int(raw_data[4])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[4])][9] if all[int(raw_data[4])][9] != "" else all[int(raw_data[4])][5]),
+                          'link': all[int(raw_data[4])][-1]},
+                    'e': {'name': 'Art name: ' + all[int(raw_data[5])][1], 'year': 'Year: ' + all[int(raw_data[5])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[5])][9] if all[int(raw_data[5])][9] != "" else all[int(raw_data[5])][5]),
+                          'link': all[int(raw_data[5])][-1]},
+                    'f': {'name': 'Art name: ' + all[int(raw_data[6])][1], 'year': 'Year: ' + all[int(raw_data[6])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[6])][9] if all[int(raw_data[6])][9] != "" else all[int(raw_data[6])][5]),
+                          'link': all[int(raw_data[6])][-1]},
+                    'g': {'name': 'Art name: ' + all[int(raw_data[7])][1], 'year': 'Year: ' + all[int(raw_data[7])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[7])][9] if all[int(raw_data[7])][9] != "" else all[int(raw_data[7])][5]),
+                          'link': all[int(raw_data[7])][-1]},
+                    'h': {'name': 'Art name: ' + all[int(raw_data[8])][1], 'year': 'Year: ' + all[int(raw_data[8])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[8])][9] if all[int(raw_data[8])][9] != "" else all[int(raw_data[8])][5]),
+                          'link': all[int(raw_data[8])][-1]},
+                    'i': {'name': 'Art name: ' + all[int(raw_data[9])][1], 'year': 'Year: ' + all[int(raw_data[9])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[9])][9] if all[int(raw_data[9])][9] != "" else all[int(raw_data[9])][5]),
+                          'link': all[int(raw_data[9])][-1]},
+                    'j': {'name': 'Art name: ' + all[int(raw_data[10])][1],
+                          'year': 'Year: ' + all[int(raw_data[10])][3],
+                          'text': "Description: " + (
+                              all[int(raw_data[10])][9] if all[int(raw_data[10])][9] != "" else all[int(raw_data[10])][
+                                  5]), 'link': all[int(raw_data[10])][-1]},
+                }
+
+            if dict =={}:
+                result = "Please enter valid artwork name or select artist"
+            else:
+                result = dict
+
+        args = {'form': form, 'result': result}
+        return render(request, self.templatename, args)
+
+class random_form(TemplateView):
+    templatename = 'random.html'
+
+    def csv2list(self, csvpath):
+        with open(csvpath, newline='') as f:
+            reader = csv.reader(f)
+            header = next(reader)
+            data = list(reader)
+            return data
+
+    def get(self, request):
+        form = randomInput()
+        return render(request, self. templatename, {'form': form})
+
+    def post(self, request):
+        form = randomInput(request.POST)
+        if form.is_valid():
+            dict = {}
+            raw_data = []
+            art_name = form.cleaned_data['text']
+            artists = form.cleaned_data['artists']
+            cma = self.csv2list(os.path.join(PROJECT_ROOT, 'static/resource/cleveland_with_rec.csv'))
+            nga =  self.csv2list(os.path.join(PROJECT_ROOT, 'static/resource/nga_with_rec.csv'))
+            louvre = self.csv2list(os.path.join(PROJECT_ROOT, 'static/resource/louvre_with_rec.csv'))
+            rijks = self.csv2list(os.path.join(PROJECT_ROOT, 'static/resource/rijks_with_rec.csv'))
+
+
+            raw_data = numpy.random.randint(low = 0, high = len(cma), size = 11)
+            raw_data = [int(i) for i in raw_data]
+
+            if raw_data != []:
+                print("here1", raw_data)
+
+                dict = {
+                    'a': {'name': 'Art name: ' + cma[int(raw_data[1])][1], 'year': 'Year: ' + cma[int(raw_data[1])][2],
+                          'text': "Description: " + (
+                              cma[int(raw_data[1])][8] if cma[int(raw_data[1])][8] != "" else cma[int(raw_data[1])][5]),
+                          'link': cma[int(raw_data[1])][6]},
+                    'b': {'name': 'Art name: ' + cma[int(raw_data[2])][1], 'year': 'Year: ' + cma[int(raw_data[2])][2],
+                          'text': "Description: " + (
+                              cma[int(raw_data[2])][8] if cma[int(raw_data[2])][8] != "" else cma[int(raw_data[2])][5]),
+                          'link': cma[int(raw_data[2])][6]},
+                    'c': {'name': 'Art name: ' + nga[int(raw_data[3])][1], 'year': 'Year: ' + nga[int(raw_data[3])][2],
+                          'text': "Description: " + (
+                              nga[int(raw_data[3])][10] if nga[int(raw_data[3])][10] != "" else nga[int(raw_data[3])][8]),
+                          'link': nga[int(raw_data[3])][9]},
+                    'd': {'name': 'Art name: ' + nga[int(raw_data[4])][1], 'year': 'Year: ' + nga[int(raw_data[4])][2],
+                          'text': "Description: " + (
+                              nga[int(raw_data[4])][10] if nga[int(raw_data[4])][10] != "" else nga[int(raw_data[4])][8]),
+                          'link': nga[int(raw_data[4])][9]},
+                    'e': {'name': 'Art name: ' + louvre[int(raw_data[5])][1], 'year': 'Year: ' + louvre[int(raw_data[5])][3],
+                          'text': "Description: " + (
+                              louvre[int(raw_data[5])][11] if louvre[int(raw_data[5])][11] != "" else louvre[int(raw_data[5])][
+                                  6]),
+                          'link': louvre[int(raw_data[5])][5]},
+                    'f': {'name': 'Art name: ' + louvre[int(raw_data[6])][1], 'year': 'Year: ' + louvre[int(raw_data[6])][3],
+                          'text': "Description: " + (
+                              louvre[int(raw_data[6])][11] if louvre[int(raw_data[6])][11] != "" else louvre[int(raw_data[6])][
+                                  6]),
+                          'link': louvre[int(raw_data[6])][5]},
+                    'g': {'name': 'Art name: ' + louvre[int(raw_data[7])][1], 'year': 'Year: ' + louvre[int(raw_data[7])][3],
+                          'text': "Description: " + (
+                              louvre[int(raw_data[7])][11] if louvre[int(raw_data[7])][11] != "" else louvre[int(raw_data[7])][
+                                  6]),
+                          'link': louvre[int(raw_data[7])][5]},
+                    'h': {'name': 'Art name: ' + louvre[int(raw_data[8])][1], 'year': 'Year: ' + louvre[int(raw_data[8])][3],
+                          'text': "Description: " + (
+                              louvre[int(raw_data[8])][11] if louvre[int(raw_data[8])][11] != "" else louvre[int(raw_data[8])][
+                                  6]),
+                          'link': louvre[int(raw_data[8])][5]},
+                    'i': {'name': 'Art name: ' + rijks[int(raw_data[9])][1], 'year': 'Year: ' + rijks[int(raw_data[9])][3],
+                          'text': "Description: " + (
+                              rijks[int(raw_data[9])][9] if rijks[int(raw_data[9])][9] != "" else rijks[int(raw_data[9])][5]),
+                          'link': rijks[int(raw_data[9])][-1]},
+                    'j': {'name': 'Art name: ' + rijks[int(raw_data[10])][1],
+                          'year': 'Year: ' + rijks[int(raw_data[10])][3],
+                          'text': "Description: " + (
+                              rijks[int(raw_data[10])][9] if rijks[int(raw_data[10])][9] != "" else rijks[int(raw_data[10])][
+                                  5]), 'link': rijks[int(raw_data[10])][-1]},
+                }
+
+            if dict =={}:
+                result = "Please enter valid artwork name or select artist"
+            else:
+                result = dict
 
         args = {'form': form, 'result': result}
         return render(request, self.templatename, args)

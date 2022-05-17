@@ -22,20 +22,20 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('index.html', views.index, name='index'),
-    path('about.html', views.about, name='about'),
-    path('courses.html', views.courses, name='courses'),
-    path('requirement.html', views.requirement, name='requirement'),
-    path('pricing.html', views.pricing, name='pricing'),
-    path('contact.html', views.contact, name='contact'),
-
-    path('prediction.html', views.school_predict.as_view(), name='prediction'),
-    path('chance.html', views.admission_chance.as_view(), name='chance'),
-    path('history.html', views.history_admission.as_view(), name='history'),
+    # path('about.html', views.about, name='about'),
+    # path('courses.html', views.courses, name='courses'),
+    # path('requirement.html', views.requirement, name='requirement'),
+    # path('pricing.html', views.pricing, name='pricing'),
+    # path('contact.html', views.contact, name='contact'),
+    #
+    # path('prediction.html', views.school_predict.as_view(), name='prediction'),
+    # path('chance.html', views.admission_chance.as_view(), name='chance'),
+    # path('history.html', views.history_admission.as_view(), name='history'),
 
     path('cma.html', views.cma_form.as_view(), name='cma'),
-    path('nga.html', views.nga, name='nga'),
-    path('louvre.html', views.louvre, name='louvre'),
-    path('rijksmuseum.html', views.rijksmuseum, name='rijksmuseum'),
-    path('random.html', views.random, name='random'),
+    path('nga.html', views.nga_form.as_view(), name='nga'),
+    path('louvre.html', views.louvre_form.as_view(), name='louvre'),
+    path('rijksmuseum.html', views.rijks_form.as_view(), name='rijksmuseum'),
+    path('random.html', views.random_form.as_view(), name='random'),
 
 ]

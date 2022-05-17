@@ -45,6 +45,27 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/static/artist/louvre_artists.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/static/artist/nga_artists.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/static/artist/rijks_artists.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/static/gpa.csv">
           <value>
             <Attribute>
@@ -60,6 +81,27 @@
           </value>
         </entry>
         <entry key="/static/resource/cleveland_with_rec.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/static/resource/louvre_with_rec.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/static/resource/nga_with_rec.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/static/resource/rijks_with_rec.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

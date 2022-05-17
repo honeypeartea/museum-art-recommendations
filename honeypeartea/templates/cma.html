@@ -69,13 +69,14 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h2 class="pageTitle">
+        <h1 class="pageTitle">
           <center>
-            <b><br>The Cleveland Museum of Art<br></b>
-            
+            <b><br>The Cleveland Museum of Art<br><br></b>
           </center>
+        </h1>
+        <h2>
           <i>Art Recommendation: You could type the name of atrwork to get the top 10 most similar artworks. Or, you could choose
-            the Artist you like and enjoy its top 10 most representative artwork.<br></i>
+          the Artist you like and enjoy its top 10 most representative artwork.<br><br></i>
         </h2>
       </div>
     </div>
@@ -83,10 +84,12 @@
 
   <div class="container">
     <form action = "" method = "post">
+      <center>
         {% csrf_token %}
         
-        {{ form.as_ul }}
+        {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Submit</button>
+      </center>
     </form>
   </div>
 

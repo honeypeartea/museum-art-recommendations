@@ -13,7 +13,7 @@ if __name__ == '__main__':
     file = "/home/xmh/Desktop/courses/cs666/with_rec/rijks_with_rec.csv"
     df = pd.read_csv(file,sep=',')
     result = []
-    with open('out.csv', 'a', newline='') as f_object:
+    with open('../cvs/out.csv', 'a', newline='') as f_object:
         writer_object = writer(f_object)
         for ind in df.index:
             url = df['url'][ind]
