@@ -291,6 +291,9 @@ class rijksInput(forms.Form):
 class randomInput(forms.Form):
     PEOPLE = [
         ('none', 'none'),
+        ('blue', 'blue'),
+        ('green', 'green'),
+        ('red', 'red'),
     ]
     text = forms.CharField(label='Please enter how you feel right now:', required=False)
-    artists = forms.CharField(label='Your Color choice', widget=forms.Select(choices=PEOPLE))
+    color = forms.CharField(label='Your Color choice', widget=forms.Select(choices=PEOPLE))

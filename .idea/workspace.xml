@@ -4,51 +4,25 @@
     <list default="true" id="b9c9726f-acca-41c4-99fc-2535bfb41165" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvs/education.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvs/gpa.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvs/rank.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvs/sat.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvs/unemployment.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvs/wage.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/honeypeartea/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/chance.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/cma.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/cma.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/courses.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/history.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/louvre.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/louvre.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/nga.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/nga.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/old_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/prediction.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/pricing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/random.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/random.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/requirement.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/rijksmuseum.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/rijksmuseum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/honeypeartea/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/crwaler.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_files/crwaler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cvs/out.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_files/gpa_clean.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_files/kmean.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_files/uc_all_clean.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_files/wage_clean.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/gpa.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/avatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/bg_direction_nav.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/glyphicons-halflings-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/glyphicons-halflings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/low-poly01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/nivo-bullets.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/section-image-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/slides/uc0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/slides/uc1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/slides/uc2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/uc_logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/race.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/resource/rijks_with_rec.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/sat.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_files/filter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/old/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/old/custom-fonts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/old/flexslider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/old/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/old/old_animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/old/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/old/animate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/old/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/old/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/old/jquery.easing.1.3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/old/jquery.fancybox-media.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/old/jquery.fancybox.pack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/old/jquery.flexslider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/old/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/old/validate.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,16 +47,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "exceleditor.install": "true",
-    "last_opened_file_path": "/home/xmh/Desktop/courses/cs666/museum-art-recommendations",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;exceleditor.install&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/xmh/Desktop/courses/cs666/museum-art-recommendations&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/python_files" />
