@@ -60,5 +60,32 @@ class HistoryAdmission(forms.Form):
 
 
 class cmaInput(forms.Form):
-    #gpa = forms.CharField(label='Art Name', widget=forms.Select(choices=COLLEGES))
-    art_name = forms.CharField()
+    PEOPLE = [
+        ('none', 'none'),
+        ('Aoki Shukuya', 'Aoki Shukuya'),
+        ('Basavana', 'Basavana'),
+        ('Bian Shoumin', 'Bian Shoumin'),
+        ('Chen Hongshou', 'Chen Hongshou'),
+        ('Devachandra', 'Devachandra'),
+        ('Fan Qi', 'Fan Qi'),
+        ('George Inness', 'George Inness'),
+        ('Hua Yan', 'Hua Yan'),
+        ('Kano Tan’yū', 'Kano Tan’yū'),
+        ('Mei Qing', 'Mei Qing'),
+        ('Min Zhen', 'Min Zhen'),
+        ('Pierre Rousseau', 'Pierre Rousseau'),
+        ('Shen Zhou', 'Shen Zhou'),
+        ('Shibata Zeshin', 'Shibata Zeshin'),
+        ('Shitao', 'Shitao'),
+        ('Shōrakusai', 'Shōrakusai'),
+        ('Song Xu', 'Song Xu'),
+        ('Tsubaki Chinzan', 'Tsubaki Chinzan'),
+        ('Xiao Yuncong', 'Xiao Yuncong'),
+        ('Zeng Yandong', 'Zeng Yandong'),
+        ('Zha Shibiao', 'Zha Shibiao'),
+        ('Zhai Dakun', 'Zhai Dakun'),
+        ('Zhang Ruoai', 'Zhang Ruoai'),
+    ]
+
+    artists = forms.CharField(label='Artists', widget=forms.Select(choices=PEOPLE))
+    art_name = forms.CharField(label='Artwork Name',required=False)

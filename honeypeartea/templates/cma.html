@@ -69,7 +69,14 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h2 class="pageTitle">Art Recommendations</h2>
+        <h2 class="pageTitle">
+          <center>
+            <b><br>The Cleveland Museum of Art<br></b>
+            
+          </center>
+          <i>Art Recommendation: You could type the name of atrwork to get the top 10 most similar artworks. Or, you could choose
+            the Artist you like and enjoy its top 10 most representative artwork.<br></i>
+        </h2>
       </div>
     </div>
   </div>
@@ -77,7 +84,8 @@
   <div class="container">
     <form action = "" method = "post">
         {% csrf_token %}
-        {{ form.as_p }}
+        
+        {{ form.as_ul }}
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
@@ -118,11 +126,15 @@
       <div class="card view overlay zoom" data-toggle="modal" data-target="#modal9">
         <img class="card-img-top wow fadeInUp" src={{ result.i.link }} alt="Card image cap">
       </div>
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal10">
+        <img class="card-img-top wow fadeInUp" src={{ result.j.link }} alt="Card image cap">
+      </div>
     </div>
   </div>
   {% else %}
   <div class="container">
     <div class="card-columns">
+      <h3>{{ result }}</h3>
       <div class="card view overlay zoom" data-toggle="modal" data-target="#modal1">
         <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
       </div>
@@ -154,6 +166,9 @@
       </div>
 
       <div class="card view overlay zoom" data-toggle="modal" data-target="#modal9">
+        <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
+      </div>
+      <div class="card view overlay zoom" data-toggle="modal" data-target="#modal10">
         <img class="card-img-top wow fadeInUp" src="{% static 'images/logo.jpg' %}" alt="Card image cap">
       </div>
     </div>
@@ -343,6 +358,26 @@
           <p class="card-text">{{ result.i.name }}</p>
           <p class="card-text">{{ result.i.year }}</p>
           <p>{{ result.i.text }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal10" tabindex="-1" role="dialog" aria-labelledby="modal1label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal1label">Art Recommendation Number 10</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="card-text">{{ result.j.name }}</p>
+          <p class="card-text">{{ result.j.year }}</p>
+          <p>{{ result.j.text }}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

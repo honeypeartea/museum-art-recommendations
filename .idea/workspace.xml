@@ -2,255 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9c9726f-acca-41c4-99fc-2535bfb41165" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/honeypeartea/templates/cma.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/honeypeartea/templates/louvre.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/honeypeartea/templates/nga.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/honeypeartea/templates/random.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/honeypeartea/templates/rijksmuseum.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/crwaler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/out.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/honeypeartea/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/assets/online-museum.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/css/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/css/mdb.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/QR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/baroque.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/paintings/allegory-of-war/allegory-of-war.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/paintings/allegory-of-war/allegory-of-war.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/paintings/judith-beheading-holofernes/judith-beheading-holofernes.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/paintings/judith-beheading-holofernes/judith-beheading-holofernes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/paintings/the-elevation-of-the-cross/the-elevation-of-the-cross.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/paintings/the-elevation-of-the-cross/the-elevation-of-the-cross.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/sculptures/aeneas-anchises-and-ascanius/aeneas-anchises-and-ascanius.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/sculptures/aeneas-anchises-and-ascanius/aeneas-anchises-and-ascanius.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/sculptures/ecstasy-of-saint-teresa/ecstasy-of-saint-teresa.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/sculptures/ecstasy-of-saint-teresa/ecstasy-of-saint-teresa.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/sculptures/san-carlo-alle-quattro-fontane/san-carlo-alle-quattro-fontane.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/sculptures/san-carlo-alle-quattro-fontane/san-carlo-alle-quattro-fontane.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/sculptures/the-three-graces/the-three-graces.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/baroque/sculptures/the-three-graces/the-three-graces.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/contemporary-kenyan-art.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/ed-wainaina/ed-wainaina.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/ed-wainaina/ed-wainaina.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/endo-patti/endo-patti.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/endo-patti/endo-patti.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/macicio/hafw/hafw.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/macicio/hafw/hafw.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/macicio/macicio.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/macicio/macicio.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/ondivo/ondivo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/ondivo/ondivo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/the-three-musketeers/the-three-musketeers.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/the-three-musketeers/the-three-musketeers.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/these-aliens-and-their-music/these-aliens-and-their-music.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/these-aliens-and-their-music/these-aliens-and-their-rapper-2016.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/viva-kanana/beauty--and-the-beast.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/viva-kanana/beauty-and-the-beast.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/viva-kanana/eleventh-hour.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/viva-kanana/eleventh-hour.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/wise-two/wise-two-urban-project-tunis.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/wise-two/wise-two-urban-project-tunis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/contemporary-kenyan-art/wise-two/wise-two-urban-project-tunis1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/20-murumbi-tn.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/20-murumbi-tn.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/34-murumbi-tn.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/34-murumbi-tn.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/asiru-olatunde-osogbo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/asiru-olatunde-osogbo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/ateloi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/ateloi.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/dogon-iron-lamp.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/dogon-iron-lamp.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/ebony-comb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/ebony-comb.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/lions-mane-headdress.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/lion’s-mane-headdress.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/magdalene.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/postage-stamps.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/postage-stamps.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/spaghetti-press.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/spaghetti-press.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/swahili-chair.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/swahili-chair.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/the-nairobi-gallery-entry-sculpture.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/vessel-by-Magdalene-Odundo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/vessel-by-Magdalene-Odundo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/yoruba-carved-stool.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/yoruba-carved-stool.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/zero-point.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/joseph-murumbi-collection/zero-point.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/kenyan-history/kenyan-history.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/landing-image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/landing/baroque.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/landing/kenyan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/landing/renaissance.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/logo/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/logo/logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/assumption-of-the-virgin/assumption-of-the-virgin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/assumption-of-the-virgin/assumption-of-the-virgin.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/monalisa/mona-lisa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/monalisa/mona-lisa.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/primavera/primavera.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/primavera/primavera.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/sistine-madonna/sistine-madonna.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/sistine-madonna/sistine-madonna.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/the-birth-of-venus/the-birth-of-venus.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/the-birth-of-venus/the-birth-of-venus.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/the-creation-of-adam/the-creation-of-adam.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/the-creation-of-adam/the-creation-of-adam.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/the-kiss-of-judas/the-kiss-of-judas.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/the-kiss-of-judas/the-kiss-of-judas.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/the-last-judgement/the-last-judgement.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/the-last-judgement/the-last-judgement.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/the-last-supper/the-last-supper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/the-last-supper/the-last-supper.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/the-school-of-athens/the-school-of-athens.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/paintings/the-school-of-athens/the-school-of-athens.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/renaissance.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/cristo-della-minerva/cristo-della-minerva.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/cristo-della-minerva/cristo-della-minerva.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/david/david.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/david/david.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/hercules-and-cacus/hercules-and-cacus.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/hercules-and-cacus/hercules-and-cacus.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/judith-and-holofernes/judith-and-holofernes.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/judith-and-holofernes/judith-and-holofernes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/madonna-of-bruges/madonna-of-bruges.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/madonna-of-bruges/madonna-of-bruges.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/moses/moses.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/moses/moses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/pietà/pietà.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/pietà/pietà.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/slaves/slaves.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/slaves/slaves.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/st-petronius/st-petronius.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/renaissance/sculptures/st-petronius/st-petronius.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/images/screen-capture.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/js/jquery-3.4.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/js/mdb.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/js/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/js/wow.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/cma.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/cma.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/honeypeartea/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/QR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/baroque.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/paintings/allegory-of-war/allegory-of-war.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/paintings/allegory-of-war/allegory-of-war.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/paintings/judith-beheading-holofernes/judith-beheading-holofernes.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/paintings/judith-beheading-holofernes/judith-beheading-holofernes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/paintings/the-elevation-of-the-cross/the-elevation-of-the-cross.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/paintings/the-elevation-of-the-cross/the-elevation-of-the-cross.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/sculptures/aeneas-anchises-and-ascanius/aeneas-anchises-and-ascanius.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/sculptures/aeneas-anchises-and-ascanius/aeneas-anchises-and-ascanius.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/sculptures/ecstasy-of-saint-teresa/ecstasy-of-saint-teresa.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/sculptures/ecstasy-of-saint-teresa/ecstasy-of-saint-teresa.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/sculptures/san-carlo-alle-quattro-fontane/san-carlo-alle-quattro-fontane.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/sculptures/san-carlo-alle-quattro-fontane/san-carlo-alle-quattro-fontane.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/sculptures/the-three-graces/the-three-graces.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/baroque/sculptures/the-three-graces/the-three-graces.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/contemporary-kenyan-art.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/ed-wainaina/ed-wainaina.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/ed-wainaina/ed-wainaina.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/endo-patti/endo-patti.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/endo-patti/endo-patti.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/macicio/hafw/hafw.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/macicio/hafw/hafw.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/macicio/macicio.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/macicio/macicio.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/ondivo/ondivo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/ondivo/ondivo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/the-three-musketeers/the-three-musketeers.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/the-three-musketeers/the-three-musketeers.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/these-aliens-and-their-music/these-aliens-and-their-music.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/these-aliens-and-their-music/these-aliens-and-their-rapper-2016.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/viva-kanana/beauty--and-the-beast.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/viva-kanana/beauty-and-the-beast.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/viva-kanana/eleventh-hour.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/viva-kanana/eleventh-hour.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/wise-two/wise-two-urban-project-tunis.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/wise-two/wise-two-urban-project-tunis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/contemporary-kenyan-art/wise-two/wise-two-urban-project-tunis1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/20-murumbi-tn.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/20-murumbi-tn.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/34-murumbi-tn.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/34-murumbi-tn.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/asiru-olatunde-osogbo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/asiru-olatunde-osogbo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/ateloi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/ateloi.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/dogon-iron-lamp.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/dogon-iron-lamp.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/ebony-comb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/ebony-comb.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/lions-mane-headdress.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/lion’s-mane-headdress.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/magdalene.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/postage-stamps.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/postage-stamps.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/spaghetti-press.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/spaghetti-press.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/swahili-chair.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/swahili-chair.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/the-nairobi-gallery-entry-sculpture.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/vessel-by-Magdalene-Odundo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/vessel-by-Magdalene-Odundo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/yoruba-carved-stool.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/yoruba-carved-stool.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/zero-point.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/joseph-murumbi-collection/zero-point.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/kenyan-history/kenyan-history.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/landing-image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/landing/baroque.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/landing/kenyan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/landing/renaissance.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/logo/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/logo/logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/assumption-of-the-virgin/assumption-of-the-virgin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/assumption-of-the-virgin/assumption-of-the-virgin.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/monalisa/mona-lisa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/monalisa/mona-lisa.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/primavera/primavera.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/primavera/primavera.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/sistine-madonna/sistine-madonna.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/sistine-madonna/sistine-madonna.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/the-birth-of-venus/the-birth-of-venus.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/the-birth-of-venus/the-birth-of-venus.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/the-creation-of-adam/the-creation-of-adam.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/the-creation-of-adam/the-creation-of-adam.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/the-kiss-of-judas/the-kiss-of-judas.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/the-kiss-of-judas/the-kiss-of-judas.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/the-last-judgement/the-last-judgement.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/the-last-judgement/the-last-judgement.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/the-last-supper/the-last-supper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/the-last-supper/the-last-supper.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/the-school-of-athens/the-school-of-athens.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/paintings/the-school-of-athens/the-school-of-athens.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/renaissance.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/cristo-della-minerva/cristo-della-minerva.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/cristo-della-minerva/cristo-della-minerva.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/david/david.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/david/david.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/hercules-and-cacus/hercules-and-cacus.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/hercules-and-cacus/hercules-and-cacus.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/judith-and-holofernes/judith-and-holofernes.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/judith-and-holofernes/judith-and-holofernes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/madonna-of-bruges/madonna-of-bruges.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/madonna-of-bruges/madonna-of-bruges.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/moses/moses.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/moses/moses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/pietà/pietà.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/pietà/pietà.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/slaves/slaves.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/slaves/slaves.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/st-petronius/st-petronius.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/renaissance/sculptures/st-petronius/st-petronius.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/screen-capture.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,15 +33,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;exceleditor.install&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/xmh/Desktop/courses/cs666/museum-art-recommendations&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "exceleditor.install": "true",
+    "last_opened_file_path": "/home/xmh/Desktop/courses/cs666/museum-art-recommendations",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="crwaler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="museum-art-recommendations" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mysite" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mysite/crwaler.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.crwaler" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
