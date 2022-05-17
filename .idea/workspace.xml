@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9c9726f-acca-41c4-99fc-2535bfb41165" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/honeypeartea/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/honeypeartea/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_files/filter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/old/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/old/custom-fonts.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/old/flexslider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/old/font-awesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/old/old_animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/old/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/old/animate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/old/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/old/custom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/old/jquery.easing.1.3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/old/jquery.fancybox-media.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/old/jquery.fancybox.pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/old/jquery.flexslider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/old/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/old/validate.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
